@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+/node_modules
+/packages/*/node_modules
+/packages/signtuskweb/
+.cache
+dist
+coverage/
+packages/generator/__tests__/assets/pdfs/tmp/*.pdf
+

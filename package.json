@@ -1,0 +1,64 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "author": "hand-dot",
+  "license": "MIT",
+  "keywords": [
+    "pdf",
+    "pdf-generation",
+    "pdf-designer",
+    "pdf-viewer",
+    "typescript",
+    "react"
+  ],
+  "description": "TypeScript base PDF generator and React base UI. Open source, developed by the community, and completely free to use under the MIT license!",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ramsmart-inno/pdfmee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pdfme/pdfme/issues"
+  },
+  "workspaces": [
+    "packages/common",
+    "packages/schemas",
+    "packages/generator",
+    "packages/ui"
+  ],
+  "scripts": {
+    "postinstall": "./scripts/link-workspaces.sh",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:common": "npm run -w packages/common clean",
+    "clean:schemas": "npm run -w packages/schemas clean",
+    "clean:generator": "npm run -w packages/generator clean",
+    "clean:ui": "npm run -w packages/ui clean",
+    "build": "npm run clean && npm run build:common && npm run build:schemas && npm-run-all --parallel build:generator build:ui",
+    "build:common": "npm run -w packages/common build",
+    "build:schemas": "npm run -w packages/schemas build",
+    "build:generator": "npm run -w packages/generator build",
+    "build:ui": "npm run -w packages/ui build",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "prettier": "npm run prettier --workspaces"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@types/jest": "^27.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "babel-loader": "^8.2.2",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.2",
+    "ts-jest-resolver": "^2.0.0",
+    "ts-loader": "^9.2.5",
+    "ts-prune": "^0.10.3",
+    "typescript": "^4.5.4"
+  }
+}

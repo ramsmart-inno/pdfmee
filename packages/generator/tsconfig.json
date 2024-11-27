@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.esm",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "paths": {
+      "@pmee/common": [
+        "packages/common/dist/esm/src"
+      ],
+      "@pmee/schemas": [
+        "packages/schemas/dist/esm/src"
+      ],
+      "@pmee/schemas/utils": [
+        "packages/schemas/dist/esm/src/utils"
+      ]
+    }
+  },
+}
