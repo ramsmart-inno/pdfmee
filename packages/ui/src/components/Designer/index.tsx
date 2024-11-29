@@ -69,7 +69,7 @@ const TemplateEditor = ({
   const [schemasList, setSchemasList] = useState<SchemaForUI[][]>([[]] as SchemaForUI[][]);
   const [pageCursor, setPageCursor] = useState(0);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [prevTemplate, setPrevTemplate] = useState<Template | null>(null);
 
   const { backgrounds, pageSizes, scale, error, refresh } =
@@ -291,7 +291,7 @@ const TemplateEditor = ({
           basePdf={template.basePdf}
         /> */}
 
-        <RightSidebar
+        {/* <RightSidebar
           hoveringSchemaId={hoveringSchemaId}
           onChangeHoveringSchemaId={onChangeHoveringSchemaId}
           height={canvasRef.current ? canvasRef.current.clientHeight : 0}
@@ -310,7 +310,7 @@ const TemplateEditor = ({
           deselectSchema={onEditEnd}
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
-        />
+        /> */}
 
         <Canvas
           ref={canvasRef}
