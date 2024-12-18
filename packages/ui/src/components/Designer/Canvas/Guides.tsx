@@ -14,7 +14,8 @@ const guideStyle = (
   left,
   height,
   width,
-  background: '#333333',
+  background: '#00FFFFFF',
+  opacity: 0.0
 });
 
 const _Guides = ({
